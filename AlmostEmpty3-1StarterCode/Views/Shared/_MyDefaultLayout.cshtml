@@ -1,0 +1,32 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*Viewbag is Dynamic object. create properties with any name you want*@
+    @*<title>@ViewBag.Title</title>*@
+    <title>@ViewData["Title"]</title>
+    <link href="~/Css/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>My First MVC Website</h1>
+    <nav>
+        <!--Modern way to create link through asp.NET-->
+        <a asp-controller="Home" asp-action="Index">Home</a><br/>
+        <a asp-controller="Home" asp-action="About">About</a>        
+    </nav>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p>
+            <!--at symbol = c# code-->
+            &copy;@DateTime.Today.Year
+            Makayla's Website
+        </p>
+    </footer>
+</body>
+</html>
